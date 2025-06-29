@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Espacio SIKIUK</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <script>
+$(document).ready(function() {
+   $("#contact-form").submit(function(event) {
+      // Evitar el comportamiento por defecto del formulario
+      event.preventDefault();
+
+      // Mostrar la animación de "loading"
+      $(".loading").show();
+
+      // Obtener los datos del formulario
+      var formData = {
+         name: $("input#sender_name").val(),
+         email: $("input#sender_email").val(),
+         subject: $("input#subject").val(),  // Capturar el valor del campo de Asunto
+         message: $("textarea#message_content").val()
+      };
+
+      // Enviar el formulario usando AJAX
+      $.ajax({
+         url: "https://formspree.io/f/xeqwvvne",
+         method: "POST",
+         data: formData,
+         dataType: "json",
+         success: function(response) {
+            // Ocultar la animación de "loading"
+            $(".loading").hide();
+
+            // Verifica si la respuesta es exitosa
+            if (response.ok) {
+               // Mostrar el mensaje de éxito y ocultar el de error
+               $(".sent-message").show();
+               
+               // Limpiar los campos del formulario
+               $("input#sender_name").val("");
+               $("input#sender_email").val("");
+               $("input#subject").val("");  // Limpiar el campo de Asunto
+               $("textarea#message_content").val("");
+            } else {
+               // Mostrar mensaje de error si la respuesta no es exitosa
+            }
+         },
+      });
+   });
+});
+
+ </script>
+
+<a class="floating-whatsapp-button" href="https://wa.me/541131596543" target="_blank" class="btn-1">
+	<img src="./assets/img/whatsapp-logo.png" alt="WhatsApp" />
+  </a>
+<link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">SIKIUK</h1>
+        
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">¿Qué es el Reiki?</a></li>
+          <li><a href="#services">Servicios</a></li>
+
+          <li><a href="#team">Sobre mi</a></li>
+
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#about">Intro</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section hero-foto">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-in">
+           
+<h1>Bienvenido a tu espacio de sanación y equilibrio interior</h1>
+
+            <p></p>
+            <div class="d-flex">
+              <a href="#about" class="btn-get-started">Empezar</a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 position-relative order-lg-last" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <a href="https://youtu.be/YhF-u842KHY" class="glightbox pulsating-play-btn"></a>
+          </div>
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <h3>Sobre el Reiki</h3>
+            <h1>Espacio SIKIUK</h1>
+            <p>El Reiki es una técnica japonesa de sanación energética que promueve el equilibrio físico, mental y emocional a través de la canalización de energía universal.</p>
+            <ul>
+              <li>
+                <i class="bi bi-flower1"></i>
+                <div>
+                  <h5>Beneficios del Reiki</h5>
+                 <p>El Reiki es una técnica que equilibra cuerpo, mente y emociones. Ayuda a reducir el estrés, 
+                  mejorar el sueño y aliviar dolores físicos. También favorece la sanación emocional, fortalece el
+                   sistema inmunológico y genera una profunda sensación de bienestar y paz interior.
+                </p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-fullscreen-exit"></i>
+                <div>
+                  <h5>Energía que transforma</h5>
+                  <p>En medio del ritmo agitado diario, el Reiki ofrece un momento de calma y conexión interior.
+                    Este espacio nace con la intención de brindarte armonía, contención y bienestar. Siempre es un buen momento para volver a vos y encontrar equilibrio.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-peace"></i>
+                <div>
+                  <h5>Un espacio para reconectar con tu esencia</h5>
+                  <p> nos mantenemos actualizados con las últimas tendencias y avances tecnológicos. Implementamos herramientas y tecnologías de última generación
+                     para ofrecer soluciones 
+                    eficientes y modernas.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nuestras Terapias</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/features-1.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+            <h3>Gemoterapia aplicada a Sanaciones.</h3>
+            <p class="fst-italic">
+  Utilizamos cristales y gemas con propiedades energéticas para facilitar la sanación y el equilibrio integral, aportando bienestar físico, emocional y espiritual.
+</p>
+<ul>
+  <li><i class="bi bi-check"></i><span> Terapias personalizadas con gemas seleccionadas</span></li>
+  <li><i class="bi bi-check"></i><span> Potenciación de la energía natural del cuerpo</span></li>
+  <li><i class="bi bi-check"></i><span> Técnicas ancestrales combinadas con prácticas modernas</span></li>
+</ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/chakra.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+      <h3>Armonizaciones de Chakras, <br> Limpieza de Aura</h3>
+<p class="fst-italic">
+  Equilibramos tus centros energéticos y limpiamos tu campo áurico para restablecer la armonía y el bienestar integral en cuerpo, mente y espíritu.
+</p>
+<ul>
+  <li><i class="bi bi-check"></i><span> Eliminación de bloqueos energéticos</span></li>
+  <li><i class="bi bi-check"></i><span> Restauración del flujo energético vital</span></li>
+  <li><i class="bi bi-check"></i><span> Mejora del equilibrio emocional y mental</span></li>
+</ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/sanacion.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+           <h3>Sanación Akáshica</h3>
+<p class="fst-italic">
+  Accedé a los Registros Akáshicos para liberar bloqueos profundos y reconectar con tu propósito de vida, transformando tu energía desde el alma.
+</p>
+<ul>
+  <li><i class="bi bi-check"></i><span> Lectura y limpieza de registros energéticos</span></li>
+  <li><i class="bi bi-check"></i><span> Liberación de patrones limitantes</span></li>
+  <li><i class="bi bi-check"></i><span> Reconexión espiritual y crecimiento personal</span></li>
+</ul>
+          </div>
+        </div><!-- Features Item -->
+
+       <!-- Features <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/features-4.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+            <h3>Escalabilidad</h3>
+            <p class="fst-italic">
+              Crecimiento Sin Límites
+            </p>
+            <p>
+              Nuestras soluciones están diseñadas para crecer junto con tu negocio. A medida que
+               tus necesidades evolucionan, nuestras aplicaciones pueden adaptarse y expandirse sin 
+               comprometer el rendimiento, asegurando que siempre estén a la altura de los nuevos desafíos y oportunidades.
+            </p>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Servicios</h2>
+        <p>Terapias Holisticas</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a  class="stretched-link">
+                <h3>Reiki a distancia (Sistema tradicional)</h3>
+              </a>
+              <p>Energía sanadora enviada a cualquier lugar. Equilibrá 
+                cuerpo, mente y emociones sin necesidad de estar presente.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-stars"></i>
+              </div>
+              <a  class="stretched-link">
+                <h3>Reiki con Ángeles (Imposición de manos)</h3>
+              </a>
+              <p>¿Querés que mantenga un estilo similar en todos los segmentos o que uno sea más emocional y otro más técnico?</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-pie-chart"></i>
+              </div>
+              <a  class="stretched-link">
+                <h3>Limpieza de espacios, ambientes, negocios</h3>
+              </a>
+              <p> Renovamos la energía de tus espacios para un ambiente limpio y armonioso. </p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-gem"></i>
+              </div>
+              <a  class="stretched-link">
+                <h3>Tameana, sanación Pleyadiana con Cristales.</h3>
+              </a>
+              <p>Técnica vibracional que utiliza cristales de cuarzo para elevar la frecuencia, armonizar y desbloquear a nivel físico, emocional y espiritual.</p>
+              <a class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-journal-bookmark"></i>
+              </div>
+              <a  class="stretched-link">
+                <h3>Reiki a Distancia</h3>
+              </a>
+             <p>Recibe la sanación energética sin importar dónde estés.</p>
+              <a  class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-compass"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Radiestesia ( Péndulo, varillas)</h3>
+              </a>
+              <p>Detectá y armonizá energías sutiles mediante herramientas de lectura vibracional.</p>
+              <a  class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Sobre Mi</h2>
+        <p>Soy Rober, terapeuta holístico que canaliza energías de luz para 
+          contribuir en procesos de sanación y liberación. A partir de las frecuencias vibratorias, te acompaño
+           a que te acompañes en tu evolución en conciencia y a asistir en el camino que solicita tu alma, integrando
+            múltiples herramientas como Radiestesia, Tameana, Sanación Akáshica, Reiki, etc
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          
+
+
+          </div><!-- End Team Member -->
+
+          <div class="row justify-content-center">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+    <div class="team-member">
+      <div class="member-img">
+        <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+        <div class="social">
+          <a href="https://www.instagram.com/energiaenconsciencia/profilecard/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/energiaenconsciencia?rdid=xzInhJTScZDy8eHs" target="_blank"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+      <div class="member-info">
+        <h4>Roberto Fabian Kisteniuk</h4>
+        <span>Terapeuta Holistico</span>
+      </div>
+    </div>
+  </div><!-- End Team Member -->
+            <div class="team-member">
+          
+               
+      
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+         <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+              </div>
+            </div>
+          </div>--> <!-- End Team Member -->  
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Consulta nuestras preguntas más comunes</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>¿Qué es el Reiki a distancia y cómo funciona?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+             El Reiki a distancia es una técnica energética que permite enviar energía sanadora 
+             a una persona sin necesidad de estar físicamente presente. Funciona gracias a la intención,
+              la conexión energética y el uso de símbolos específicos que trascienden tiempo y espacio.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>¿Es igual de efectivo que una sesión presencial?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Sí. Muchas personas experimentan los mismos beneficios que en una sesión presencial: 
+              relajación profunda, alivio del estrés, equilibrio emocional y bienestar general. La 
+              energía no conoce límites físicos.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>¿Necesito hacer algo durante la sesión?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Se recomienda que durante la sesión estés en un lugar tranquilo, acostado o 
+              sentado, con ropa cómoda. Podés poner música suave, una vela o simplemente cerrar 
+              los ojos y relajarte. Sin embargo, también podés seguir con tu día si lo preferís.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>¿Cuánto dura una sesión de Reiki a distancia?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              La duración puede variar según cada terapeuta, pero en general una sesión
+               dura entre 30 y 45 minutos. Luego de la sesión podés recibir un breve mensaje
+                con lo percibido durante el trabajo energético.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>¿Cuántas sesiones necesito para ver resultados?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Cada persona es diferente. Algunas notan cambios desde la primera
+               sesión, mientras que otras requieren un proceso más continuo. Siempre se
+                recomienda comenzar con al menos 3 sesiones para permitir que la energía fluya 
+                y se asiente.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contacto</h2>
+        <p style="color: #00a3ff;">Ante cualquier consulta no dude en comunicarse</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 ">
+            <div class="row gy-4">
+
+             <!--  <div class="col-lg-12">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+              </div>-->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3 style="color: #00a3ff">Teléfono (AR +54)</h3>
+                  <p style="color: #00a3ff">1562631035</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3 style="color: #00a3ff;">Email</h3>
+
+                  <p style="color: #00a3ff;">lucaslaborde.trabajo@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+   <form id="contact-form" action="https://formspree.io/f/xeqwvvne" method="POST" class="php-email-form">
+      <div class="row gy-4">
+         <div class="col-md-6">
+            <input type="text" name="name" id="sender_name" class="form-control" placeholder="NOMBRE" required="">
+         </div>
+         <div class="col-md-6">
+            <input type="text" name="subject" id="subject" class="form-control" placeholder="ASUNTO" required="">
+         </div>
+         <div class="col-md-6">
+            <input type="email" class="form-control" id="sender_email" name="email" placeholder="CORREO" required="">
+         </div>
+         <div class="col-md-12">
+            <textarea class="form-control" name="message" id="message_content" rows="4" placeholder="MENSAJE" required=""></textarea>
+         </div>
+         <div class="col-md-12 text-center">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Su Mensaje fue enviado, ¡Gracias!</div>
+            <button type="submit">Enviar Mensaje</button>
+         </div>
+      </div>
+   </form>
+</div>
+         
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">SIKIUK</h3>
+      <p>Terapias Holisticas</p>
+   <div class="social-links d-flex justify-content-center">
+  <a href="https://www.instagram.com/energiaenconsciencia/profilecard/" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-instagram"></i>
+  </a>
+  <a href="https://www.facebook.com/energiaenconsciencia?rdid=xzInhJTScZDy8eHs" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
+    <i class="bi bi-facebook"></i>
+  </a>
+</div>
+      
+      
+      <div class="copyright">
+        <span>Copyright</span> <strong class="px-1 sitename">S.P</strong> <span>All Rights Reserved</span>
+      </div>
+      <div class="credits">
+    
+        Designed by <a href="https://www.linkedin.com/in/lucas-laborde-trabajo/">Lucas Laborde</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
