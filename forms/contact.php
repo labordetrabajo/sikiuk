@@ -2,7 +2,7 @@
 if(isset($_POST['sender_email'])) {
 
   // Correo electrónico al que se enviará el mensaje.
-  $to = "lucaslaborde.trabajo@gmail.com";
+  $to = "espaciosikiuk@gmail.com";
 
   // Asunto del mensaje.
   $subject = "Mensaje del formulario de contacto";
